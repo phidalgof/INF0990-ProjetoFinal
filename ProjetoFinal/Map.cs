@@ -78,10 +78,31 @@ public class Map
         return NearJewels;
     }
     /// <summary>
-    /// Efeito se tiver elemento radioativo na vizinhança
+    /// coletar elemento radiotivo
     /// </summary>
-
-
+    public List<Radio> GetRadios(int x, int y)
+    {
+        List<Radio> NearRadios = new List<Radio>();
+        int[,] Coords = GenerateCoord(x, y);
+        for (int i = 0; i < Coords.GetLength(0); i++)
+        {
+            Radio? radio = GetRadio(Coords[i, 0], Coords[i, 1]);
+            if (radio is not null) NearRadios.Add(radio);
+        }
+        return NearRadios;
+    }
+    /// <summary>
+    /// Atualização do espaço do elemento reativo transposto para espaço vazio.
+    /// </summary>
+    private Radio? GetRadio(int x, int y)
+    {
+        if (Matriz[x, y] is Radio radio)
+        {
+            Matriz[x, y] = new Empty();
+            return radio;
+        }
+        return null;
+    }
     /// <summary>
     /// Atualização do espaço da joia coletada para espaço vazio.
     /// </summary>

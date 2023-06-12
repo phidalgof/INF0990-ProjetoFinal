@@ -27,7 +27,6 @@ public class JewelCollector {
         {
             Map map = new Map (w, h, level);
             Robot robot = new Robot(map);
-
             Console.WriteLine($"Level: {level}");
 
             try{
@@ -43,7 +42,7 @@ public class JewelCollector {
                     break;
                 }
             }
-            catch(RanOutOfEnergyException ex)
+            catch(RanOutOfEnergyException exceptions)
             {
                 Console.WriteLine("Robo sem energia!");
             }
@@ -63,7 +62,7 @@ public class JewelCollector {
         do {
             if(!robot.HasEnergy()) throw new RanOutOfEnergyException();
             robot.PrintMap();
-            Console.WriteLine("\n Enter the command: ");
+            Console.WriteLine("\n Esperando comandos ...: ");
             ConsoleKeyInfo command = Console.ReadKey(true);
 
             switch (command.Key.ToString())

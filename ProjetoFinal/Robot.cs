@@ -15,7 +15,8 @@ public class Robot: ItemMap
     /// <summary>
     /// Posição inicial do robo, energia atual e nível de jogo.
     /// </summary>
-    public Robot(Map map, int x=0, int y=0, int energy=5) : base("ME "){
+    public Robot(Map map, int x=0, int y=0, int energy=5) : base("ME ")
+    {
         this.map = map;
         this.x = x;
         this.y = y;
@@ -33,17 +34,13 @@ public class Robot: ItemMap
             this.x--;
             this.energy--;
         }
-        catch (OccupiedPositionException e)
+        catch (OccupiedPositionException exceptions)
         {
             Console.WriteLine($"\nPosição ({this.x-1}, {this.y}) ocupada");
         }
-        catch (OutOfMapException e)
+        catch (OutOfMapException exceptions)
         {
             Console.WriteLine($"\nPosição ({this.x-1}, {this.y}) fora do mapa");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"\nPosition is prohibit");
         }
     }
     public void MoveDown(){
@@ -53,17 +50,13 @@ public class Robot: ItemMap
             this.x++;
             this.energy--;
         }
-        catch (OccupiedPositionException e)
+        catch (OccupiedPositionException exceptions)
         {         
             Console.WriteLine($"\nPosição ({this.x+1}, {this.y}) ocupada");
         }
-        catch (OutOfMapException e)
+        catch (OutOfMapException exceptions)
         {         
             Console.WriteLine($"\nPosição ({this.x+1}, {this.y}) fora do mapa");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"\nPosition is prohibit");
         }
     }
     public void MoveRight(){
@@ -73,17 +66,13 @@ public class Robot: ItemMap
             this.y++;
             this.energy--;
         }
-        catch (OccupiedPositionException e)
+        catch (OccupiedPositionException exceptions)
         {         
             Console.WriteLine($"\nPosição ({this.x}, {this.y+1}) ocupada");
         }
-        catch (OutOfMapException e)
+        catch (OutOfMapException exceptions)
         {        
             Console.WriteLine($"\nPosição ({this.x}, {this.y+1}) fora do mapa");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"\nPosition is prohibit");
         }
     }
     public void MoveLeft(){
@@ -93,17 +82,13 @@ public class Robot: ItemMap
             this.y--;
             this.energy--;
         }
-        catch (OccupiedPositionException e)
+        catch (OccupiedPositionException exceptions)
         {         
             Console.WriteLine($"\nPosição ({this.x}, {this.y-1}) ocupada");
         }
-        catch (OutOfMapException e)
+        catch (OutOfMapException exceptions)
         {            
             Console.WriteLine($"\nPosição ({this.x}, {this.y-1}) fora do mapa");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"\nPosition is prohibit");
         }
     }
     /// <summary>
@@ -114,6 +99,7 @@ public class Robot: ItemMap
         Rechargeable? RechargeEnergy = map.GetRechargeable(this.x, this.y);
         RechargeEnergy?.Recharge(this);
         List<Jewel> NearJewels = map.GetJewels(this.x, this.y);
+        List<Radio> NearRadios = map.GetRadios(this.x, this.y);
         foreach (Jewel j in NearJewels)
             Bag.Add(j);
     }
