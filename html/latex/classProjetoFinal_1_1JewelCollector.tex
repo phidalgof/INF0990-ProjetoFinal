@@ -1,0 +1,76 @@
+\doxysection{Projeto\+Final.\+Jewel\+Collector Class Reference}
+\hypertarget{classProjetoFinal_1_1JewelCollector}{}\label{classProjetoFinal_1_1JewelCollector}\index{ProjetoFinal.JewelCollector@{ProjetoFinal.JewelCollector}}
+
+
+Classe Jewel\+Collector\+: define a função principal do jogo definição de movimentos e o seu controle completando exemplo disponibilizado no git.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325}{Main}} ()
+\begin{DoxyCompactList}\small\item\em Método principal\+: inicio o jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe Jewel\+Collector\+: define a função principal do jogo definição de movimentos e o seu controle completando exemplo disponibilizado no git. 
+
+Definition at line \mbox{\hyperlink{JewelCollector_8cs_source_l00007}{7}} of file \mbox{\hyperlink{JewelCollector_8cs_source}{Jewel\+Collector.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325}\label{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325} 
+\index{ProjetoFinal.JewelCollector@{ProjetoFinal.JewelCollector}!Main@{Main}}
+\index{Main@{Main}!ProjetoFinal.JewelCollector@{ProjetoFinal.JewelCollector}}
+\doxysubsubsection{\texorpdfstring{Main()}{Main()}}
+{\footnotesize\ttfamily static void Projeto\+Final.\+Jewel\+Collector.\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Método principal\+: inicio o jogo. 
+
+
+
+Definition at line \mbox{\hyperlink{JewelCollector_8cs_source_l00021}{21}} of file \mbox{\hyperlink{JewelCollector_8cs_source}{Jewel\+Collector.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w\ =\ 10;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h\ =\ 10;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 1;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ Map\ map\ =\ \textcolor{keyword}{new}\ Map\ (w,\ h,\ level);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ Robot\ robot\ =\ \textcolor{keyword}{new}\ Robot(map);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Level:\ \{level\}"{}});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Result\ =\ Run(robot);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Result)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w++;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h++;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ level++;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(RanOutOfEnergyException\ e)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Robo\ sem\ energia!"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Jewel\+Collector.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,268 @@
+\doxysection{Projeto\+Final.\+Map Class Reference}
+\hypertarget{classProjetoFinal_1_1Map}{}\label{classProjetoFinal_1_1Map}\index{ProjetoFinal.Map@{ProjetoFinal.Map}}
+
+
+Classe Map\+: define o mapa 2D método para imprimir o mapa na tela método para imprimir items no mapa.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProjetoFinal_1_1Map_a22cbd9974f8851b49c891d9b8d690ed6}{Map}} (int w=10, int h=10, int level=1)
+\begin{DoxyCompactList}\small\item\em Classe criada pra geração do mapa inicial 10 x 10 Para futuros níveis, incrementa +1 o tamanho do mapa, Ultmo nível\+: tamanho limite do mapa 30 x 30. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}} (\mbox{\hyperlink{classProjetoFinal_1_1ItemMap}{Item\+Map}} Item, int x, int y)
+\begin{DoxyCompactList}\small\item\em Posicionamento de itens no mapa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}} (int x\+\_\+old, int y\+\_\+old, int x, int y)
+\begin{DoxyCompactList}\small\item\em Atualicação do mapa apos deslocamento. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}} $>$ \mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{Get\+Jewels}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em coletar joias se tiver na vizinhança \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}? \mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{Get\+Rechargeable}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Incrementar a energia do robô conforme itens coletados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProjetoFinal_1_1Map_af87fbb57177efc4ecf4caa953dbe41ba}{Print\+Map}} ()
+\item 
+bool \mbox{\hyperlink{classProjetoFinal_1_1Map_a582d6a33d4308c037639d9f6e133cddd}{Is\+Done}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classProjetoFinal_1_1Map_a98a0246f722a4a39be3f9638c184ee82}{h}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \mbox{\hyperlink{classProjetoFinal_1_1Map_acf4cc2c8656e2748875eb08e29367b46}{w}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe Map\+: define o mapa 2D método para imprimir o mapa na tela método para imprimir items no mapa. 
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00007}{7}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classProjetoFinal_1_1Map_a22cbd9974f8851b49c891d9b8d690ed6}\label{classProjetoFinal_1_1Map_a22cbd9974f8851b49c891d9b8d690ed6} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!Map@{Map}}
+\index{Map@{Map}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Projeto\+Final.\+Map.\+Map (\begin{DoxyParamCaption}\item[{int}]{w = {\ttfamily 10},  }\item[{int}]{h = {\ttfamily 10},  }\item[{int}]{level = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Classe criada pra geração do mapa inicial 10 x 10 Para futuros níveis, incrementa +1 o tamanho do mapa, Ultmo nível\+: tamanho limite do mapa 30 x 30. 
+
+Geração do mapa dependendo o nível do jogo.
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00018}{18}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ this.w\ =\ w\ <=\ 30\ ?\ w\ :\ 30;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ this.h\ =\ h\ <=\ 30\ ?\ h\ :\ 30;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Matriz\ =\ \textcolor{keyword}{new}\ ItemMap[w,\ h];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.GetLength(0);\ i++)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[i,\ j]\ =\ \textcolor{keyword}{new}\ Empty();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ 1)\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ GenerateFixed();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ GenerateRandom();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}\label{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!GetJewels@{GetJewels}}
+\index{GetJewels@{GetJewels}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{GetJewels()}{GetJewels()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}} $>$ Projeto\+Final.\+Map.\+Get\+Jewels (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+coletar joias se tiver na vizinhança 
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00069}{69}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ \textcolor{keyword}{new}\ List<Jewel>();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ Jewel?\ jewel\ =\ GetJewel(Coords[i,\ 0],\ Coords[i,\ 1]);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jewel\ is\ not\ \textcolor{keyword}{null})\ NearJewels.Add(jewel);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NearJewels;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}\label{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!GetRechargeable@{GetRechargeable}}
+\index{GetRechargeable@{GetRechargeable}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{GetRechargeable()}{GetRechargeable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}? Projeto\+Final.\+Map.\+Get\+Rechargeable (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Incrementar a energia do robô conforme itens coletados. 
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00100}{100}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[Coords[i,\ 0],\ Coords[i,\ 1]]\ is\ Rechargeable\ r)\ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}\label{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!Insert@{Insert}}
+\index{Insert@{Insert}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily void Projeto\+Final.\+Map.\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProjetoFinal_1_1ItemMap}{Item\+Map}}}]{Item,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Posicionamento de itens no mapa. 
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00043}{43}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ Item;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Map_a582d6a33d4308c037639d9f6e133cddd}\label{classProjetoFinal_1_1Map_a582d6a33d4308c037639d9f6e133cddd} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!IsDone@{IsDone}}
+\index{IsDone@{IsDone}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{IsDone()}{IsDone()}}
+{\footnotesize\ttfamily bool Projeto\+Final.\+Map.\+Is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00134}{134}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.GetLength(0);\ i++)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[i,\ j]\ is\ Jewel)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Map_af87fbb57177efc4ecf4caa953dbe41ba}\label{classProjetoFinal_1_1Map_af87fbb57177efc4ecf4caa953dbe41ba} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!PrintMap@{PrintMap}}
+\index{PrintMap@{PrintMap}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{PrintMap()}{PrintMap()}}
+{\footnotesize\ttfamily void Projeto\+Final.\+Map.\+Print\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00126}{126}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.\ GetLength(0);\ i++)\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(Matriz[i,\ j]);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}\label{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!Update@{Update}}
+\index{Update@{Update}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Projeto\+Final.\+Map.\+Update (\begin{DoxyParamCaption}\item[{int}]{x\+\_\+old,  }\item[{int}]{y\+\_\+old,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Atualicação do mapa apos deslocamento. 
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00050}{50}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0\ ||\ y\ <\ 0\ ||\ x>\ this.w-\/1\ ||\ y>\ this.h-\/1)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ OutOfMapException();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsAllowed(x,\ y))}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ Matriz[x\_old,\ y\_old];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x\_old,\ y\_old]\ =\ \textcolor{keyword}{new}\ Empty();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ OccupiedPositionException();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classProjetoFinal_1_1Map_a98a0246f722a4a39be3f9638c184ee82}\label{classProjetoFinal_1_1Map_a98a0246f722a4a39be3f9638c184ee82} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!h@{h}}
+\index{h@{h}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily int Projeto\+Final.\+Map.\+h\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00010}{10}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{\textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Map_acf4cc2c8656e2748875eb08e29367b46}\label{classProjetoFinal_1_1Map_acf4cc2c8656e2748875eb08e29367b46} 
+\index{ProjetoFinal.Map@{ProjetoFinal.Map}!w@{w}}
+\index{w@{w}!ProjetoFinal.Map@{ProjetoFinal.Map}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily int Projeto\+Final.\+Map.\+w\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cs_source_l00011}{11}} of file \mbox{\hyperlink{Map_8cs_source}{Map.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Map.\+cs\end{DoxyCompactItemize}
