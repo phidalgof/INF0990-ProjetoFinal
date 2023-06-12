@@ -9,12 +9,13 @@ public class JewelCollector {
     delegate void MoveDown();
     delegate void MoveRight();
     delegate void MoveLeft();
+    delegate void WhenGet();
 
     static event MoveUp OnMoveUp;
     static event MoveDown OnMoveDown;
     static event MoveRight OnMoveRight;
     static event MoveLeft OnMoveLeft;
-    static event MoveLeft Get;
+    static event WhenGet Get;
 /// <summary>
 /// Método principal: inicio o jogo.
 /// </summary>
@@ -22,7 +23,6 @@ public class JewelCollector {
         int w = 10;
         int h = 10;
         int level = 1;
-
         while(true)
         {
             Map map = new Map (w, h, level);
@@ -43,7 +43,7 @@ public class JewelCollector {
                     break;
                 }
             }
-            catch(RanOutOfEnergyException e)
+            catch(RanOutOfEnergyException ex)
             {
                 Console.WriteLine("Robo sem energia!");
             }
@@ -73,7 +73,7 @@ public class JewelCollector {
                 case "D" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); OnMoveRight() ; break;
                 case "A" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); OnMoveLeft() ; break;
                 case "G" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); Get() ; break;
-                case "quit" : return false;
+                case "Q" : return false;
                 default: Console.WriteLine($"\n Comando inválido:{command.Key.ToString()}"); break;
             }
         } while (!robot.map.IsDone());
