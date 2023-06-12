@@ -23,10 +23,11 @@ public class JewelCollector {
         int w = 10;
         int h = 10;
         int level = 1;
+        Map map = new Map (w, h, level);
+        Robot robot = new Robot(map);
         while(true)
         {
-            Map map = new Map (w, h, level);
-            Robot robot = new Robot(map);
+            robot.UpdateRobot(w, h, level);
             Console.WriteLine($"Level: {level}");
 
             try{
@@ -53,11 +54,11 @@ public class JewelCollector {
     /// </summary>
     private static bool Run(Robot robot)  
     {
-        OnMoveUp += robot.MoveUp;
-        OnMoveDown += robot.MoveDown;
-        OnMoveRight += robot.MoveRight;
-        OnMoveLeft += robot.MoveLeft;
-        Get += robot.Get;
+        OnMoveUp = robot.MoveUp;
+        OnMoveDown = robot.MoveDown;
+        OnMoveRight = robot.MoveRight;
+        OnMoveLeft = robot.MoveLeft;
+        Get = robot.Get;
 
         do {
             if(!robot.HasEnergy()) throw new RanOutOfEnergyException();

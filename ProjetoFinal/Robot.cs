@@ -24,6 +24,18 @@ public class Robot: ItemMap
         this.map.Insert(this, x, y);
     }
     /// <summary>
+    /// Atualizar robo toda vez que muda de level
+    /// </summary>
+    public void UpdateRobot(int w, int h, int level, int energy=5)
+    {
+        ///this.map = map;
+        this.x = 0;
+        this.y = 0;
+        this.energy = energy;
+        this.map.UpdateMap(w, h, level);
+        this.map.Insert(this, this.x, this.y);
+    }
+    /// <summary>
     /// método de deslocamento. Up / Down / Right / Left
     /// tratamentos de exceptions
     /// </summary>

@@ -38,6 +38,33 @@ public class Map
         }
     }
     /// <summary>
+    /// atualizar mapa toda vez que muda de level
+    /// </summary>
+    public void UpdateMap(int w, int h, int level)
+    {
+    
+        this.w = w <= 30 ? w : 30;
+        this.h = h <= 30 ? h : 30;
+        Matriz = new ItemMap[w, h];
+        for (int i = 0; i < Matriz.GetLength(0); i++) {
+            for (int j = 0; j < Matriz.GetLength(1); j++) {
+                Matriz[i, j] = new Empty();
+            }
+        }
+        /// <summary>
+        /// Geração do mapa dependendo o nível do jogo.
+        /// </summary>
+        if (level == 1) 
+        {
+            GenerateFixed();
+        }
+        else 
+        {
+            GenerateRandom();
+        }
+    }
+
+    /// <summary>
     /// Posicionamento de itens no mapa.
     /// </summary>
     public void Insert (ItemMap Item, int x, int y)
