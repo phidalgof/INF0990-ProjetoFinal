@@ -182,13 +182,14 @@ Properties</h2></td></tr>
 <p>Posição inicial do robo, energia atual e nível de jogo. </p>
 
 <p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00018">18</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                                          : base(<span class="stringliteral">&quot;ME &quot;</span>){</div>
-<div class="line"><span class="lineno">   19</span>        this.map = map;</div>
-<div class="line"><span class="lineno">   20</span>        this.x = x;</div>
-<div class="line"><span class="lineno">   21</span>        this.y = y;</div>
-<div class="line"><span class="lineno">   22</span>        this.energy = energy;</div>
-<div class="line"><span class="lineno">   23</span>        this.map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#a44f7b2a282f3ae6f1be32f6f58dd3c62">Insert</a>(<span class="keyword">this</span>, x, y);</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>                                                          : base(<span class="stringliteral">&quot;ME &quot;</span>)</div>
+<div class="line"><span class="lineno">   19</span>    {</div>
+<div class="line"><span class="lineno">   20</span>        this.map = map;</div>
+<div class="line"><span class="lineno">   21</span>        this.x = x;</div>
+<div class="line"><span class="lineno">   22</span>        this.y = y;</div>
+<div class="line"><span class="lineno">   23</span>        this.energy = energy;</div>
+<div class="line"><span class="lineno">   24</span>        this.map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#a44f7b2a282f3ae6f1be32f6f58dd3c62">Insert</a>(<span class="keyword">this</span>, x, y);</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
 <div class="ttc" id="aclassProjetoFinal_1_1Map_html_a44f7b2a282f3ae6f1be32f6f58dd3c62"><div class="ttname"><a href="classProjetoFinal_1_1Map.html#a44f7b2a282f3ae6f1be32f6f58dd3c62">ProjetoFinal.Map.Insert</a></div><div class="ttdeci">void Insert(ItemMap Item, int x, int y)</div><div class="ttdoc">Posicionamento de itens no mapa.</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00043">Map.cs:43</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -219,15 +220,17 @@ Properties</h2></td></tr>
 
 <p>método de recarga de energia do robo e coleta de joias </p>
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00112">112</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>    {</div>
-<div class="line"><span class="lineno">  114</span>        Rechargeable? RechargeEnergy = map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#aaa992e0666e95e123406ee94a671dd79">GetRechargeable</a>(this.x, this.y);</div>
-<div class="line"><span class="lineno">  115</span>        RechargeEnergy?.Recharge(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  116</span>        List&lt;Jewel&gt; NearJewels = map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#af71c2b3d836a394f54b1a253dee38819">GetJewels</a>(this.x, this.y);</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">foreach</span> (Jewel j <span class="keywordflow">in</span> NearJewels)</div>
-<div class="line"><span class="lineno">  118</span>            Bag.Add(j);</div>
-<div class="line"><span class="lineno">  119</span>    }</div>
-<div class="ttc" id="aclassProjetoFinal_1_1Map_html_aaa992e0666e95e123406ee94a671dd79"><div class="ttname"><a href="classProjetoFinal_1_1Map.html#aaa992e0666e95e123406ee94a671dd79">ProjetoFinal.Map.GetRechargeable</a></div><div class="ttdeci">Rechargeable? GetRechargeable(int x, int y)</div><div class="ttdoc">Incrementar a energia do robô conforme itens coletados.</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00100">Map.cs:100</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00097">97</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        Rechargeable? RechargeEnergy = map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#aaa992e0666e95e123406ee94a671dd79">GetRechargeable</a>(this.x, this.y);</div>
+<div class="line"><span class="lineno">  100</span>        RechargeEnergy?.Recharge(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  101</span>        List&lt;Jewel&gt; NearJewels = map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#af71c2b3d836a394f54b1a253dee38819">GetJewels</a>(this.x, this.y);</div>
+<div class="line"><span class="lineno">  102</span>        List&lt;Radio&gt; NearRadios = map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#a037b34aa08a7a2b0078abbde602f7ffa">GetRadios</a>(this.x, this.y);</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">foreach</span> (Jewel j <span class="keywordflow">in</span> NearJewels)</div>
+<div class="line"><span class="lineno">  104</span>            Bag.Add(j);</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="ttc" id="aclassProjetoFinal_1_1Map_html_a037b34aa08a7a2b0078abbde602f7ffa"><div class="ttname"><a href="classProjetoFinal_1_1Map.html#a037b34aa08a7a2b0078abbde602f7ffa">ProjetoFinal.Map.GetRadios</a></div><div class="ttdeci">List&lt; Radio &gt; GetRadios(int x, int y)</div><div class="ttdoc">coletar elemento radiotivo</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00083">Map.cs:83</a></div></div>
+<div class="ttc" id="aclassProjetoFinal_1_1Map_html_aaa992e0666e95e123406ee94a671dd79"><div class="ttname"><a href="classProjetoFinal_1_1Map.html#aaa992e0666e95e123406ee94a671dd79">ProjetoFinal.Map.GetRechargeable</a></div><div class="ttdeci">Rechargeable? GetRechargeable(int x, int y)</div><div class="ttdoc">Incrementar a energia do robô conforme itens coletados.</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00121">Map.cs:121</a></div></div>
 <div class="ttc" id="aclassProjetoFinal_1_1Map_html_af71c2b3d836a394f54b1a253dee38819"><div class="ttname"><a href="classProjetoFinal_1_1Map.html#af71c2b3d836a394f54b1a253dee38819">ProjetoFinal.Map.GetJewels</a></div><div class="ttdeci">List&lt; Jewel &gt; GetJewels(int x, int y)</div><div class="ttdoc">coletar joias se tiver na vizinhança</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00069">Map.cs:69</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -255,10 +258,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00139">139</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>    {</div>
-<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">return</span> this.energy &gt; 0;</div>
-<div class="line"><span class="lineno">  142</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00125">125</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>    {</div>
+<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">return</span> this.energy &gt; 0;</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -285,27 +288,23 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00049">49</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                          {</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x+1, this.y);</div>
-<div class="line"><span class="lineno">   53</span>            this.x++;</div>
-<div class="line"><span class="lineno">   54</span>            this.energy--;</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">catch</span> (OccupiedPositionException e)</div>
-<div class="line"><span class="lineno">   57</span>        {         </div>
-<div class="line"><span class="lineno">   58</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x+1}, {this.y}) ocupada&quot;</span>);</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">catch</span> (OutOfMapException e)</div>
-<div class="line"><span class="lineno">   61</span>        {         </div>
-<div class="line"><span class="lineno">   62</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x+1}, {this.y}) fora do mapa&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   65</span>        {</div>
-<div class="line"><span class="lineno">   66</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosition is prohibit&quot;</span>);</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00046">46</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                          {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x+1, this.y);</div>
+<div class="line"><span class="lineno">   50</span>            this.x++;</div>
+<div class="line"><span class="lineno">   51</span>            this.energy--;</div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">catch</span> (OccupiedPositionException exceptions)</div>
+<div class="line"><span class="lineno">   54</span>        {         </div>
+<div class="line"><span class="lineno">   55</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x+1}, {this.y}) ocupada&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>        }</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">catch</span> (OutOfMapException exceptions)</div>
+<div class="line"><span class="lineno">   58</span>        {         </div>
+<div class="line"><span class="lineno">   59</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x+1}, {this.y}) fora do mapa&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
 <div class="ttc" id="aclassProjetoFinal_1_1Map_html_acce63123ff60132b4b89d91e849f0013"><div class="ttname"><a href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">ProjetoFinal.Map.Update</a></div><div class="ttdeci">void Update(int x_old, int y_old, int x, int y)</div><div class="ttdoc">Atualicação do mapa apos deslocamento.</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00050">Map.cs:50</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -333,27 +332,23 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00089">89</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>                          {</div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   91</span>        {</div>
-<div class="line"><span class="lineno">   92</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x, this.y-1);</div>
-<div class="line"><span class="lineno">   93</span>            this.y--;</div>
-<div class="line"><span class="lineno">   94</span>            this.energy--;</div>
-<div class="line"><span class="lineno">   95</span>        }</div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">catch</span> (OccupiedPositionException e)</div>
-<div class="line"><span class="lineno">   97</span>        {         </div>
-<div class="line"><span class="lineno">   98</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y-1}) ocupada&quot;</span>);</div>
-<div class="line"><span class="lineno">   99</span>        }</div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">catch</span> (OutOfMapException e)</div>
-<div class="line"><span class="lineno">  101</span>        {            </div>
-<div class="line"><span class="lineno">  102</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y-1}) fora do mapa&quot;</span>);</div>
-<div class="line"><span class="lineno">  103</span>        }</div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">  105</span>        {</div>
-<div class="line"><span class="lineno">  106</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosition is prohibit&quot;</span>);</div>
-<div class="line"><span class="lineno">  107</span>        }</div>
-<div class="line"><span class="lineno">  108</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00078">78</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                          {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x, this.y-1);</div>
+<div class="line"><span class="lineno">   82</span>            this.y--;</div>
+<div class="line"><span class="lineno">   83</span>            this.energy--;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">catch</span> (OccupiedPositionException exceptions)</div>
+<div class="line"><span class="lineno">   86</span>        {         </div>
+<div class="line"><span class="lineno">   87</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y-1}) ocupada&quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">catch</span> (OutOfMapException exceptions)</div>
+<div class="line"><span class="lineno">   90</span>        {            </div>
+<div class="line"><span class="lineno">   91</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y-1}) fora do mapa&quot;</span>);</div>
+<div class="line"><span class="lineno">   92</span>        }</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -380,27 +375,23 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00069">69</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>                           {</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   71</span>        {</div>
-<div class="line"><span class="lineno">   72</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x, this.y+1);</div>
-<div class="line"><span class="lineno">   73</span>            this.y++;</div>
-<div class="line"><span class="lineno">   74</span>            this.energy--;</div>
-<div class="line"><span class="lineno">   75</span>        }</div>
-<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">catch</span> (OccupiedPositionException e)</div>
-<div class="line"><span class="lineno">   77</span>        {         </div>
-<div class="line"><span class="lineno">   78</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y+1}) ocupada&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>        }</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">catch</span> (OutOfMapException e)</div>
-<div class="line"><span class="lineno">   81</span>        {        </div>
-<div class="line"><span class="lineno">   82</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y+1}) fora do mapa&quot;</span>);</div>
-<div class="line"><span class="lineno">   83</span>        }</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosition is prohibit&quot;</span>);</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00062">62</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                           {</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   64</span>        {</div>
+<div class="line"><span class="lineno">   65</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x, this.y+1);</div>
+<div class="line"><span class="lineno">   66</span>            this.y++;</div>
+<div class="line"><span class="lineno">   67</span>            this.energy--;</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">catch</span> (OccupiedPositionException exceptions)</div>
+<div class="line"><span class="lineno">   70</span>        {         </div>
+<div class="line"><span class="lineno">   71</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y+1}) ocupada&quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">catch</span> (OutOfMapException exceptions)</div>
+<div class="line"><span class="lineno">   74</span>        {        </div>
+<div class="line"><span class="lineno">   75</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x}, {this.y+1}) fora do mapa&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,27 +420,23 @@ Properties</h2></td></tr>
 
 <p>método de deslocamento. Up / Down / Right / Left tratamentos de exceptions </p>
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00029">29</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                        {</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   31</span>        {</div>
-<div class="line"><span class="lineno">   32</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x-1, this.y);</div>
-<div class="line"><span class="lineno">   33</span>            this.x--;</div>
-<div class="line"><span class="lineno">   34</span>            this.energy--;</div>
-<div class="line"><span class="lineno">   35</span>        }</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">catch</span> (OccupiedPositionException e)</div>
-<div class="line"><span class="lineno">   37</span>        {</div>
-<div class="line"><span class="lineno">   38</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x-1}, {this.y}) ocupada&quot;</span>);</div>
-<div class="line"><span class="lineno">   39</span>        }</div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">catch</span> (OutOfMapException e)</div>
-<div class="line"><span class="lineno">   41</span>        {</div>
-<div class="line"><span class="lineno">   42</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x-1}, {this.y}) fora do mapa&quot;</span>);</div>
-<div class="line"><span class="lineno">   43</span>        }</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   45</span>        {</div>
-<div class="line"><span class="lineno">   46</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosition is prohibit&quot;</span>);</div>
-<div class="line"><span class="lineno">   47</span>        }</div>
-<div class="line"><span class="lineno">   48</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00030">30</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>                        {</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   32</span>        {</div>
+<div class="line"><span class="lineno">   33</span>            map.<a class="code hl_function" href="classProjetoFinal_1_1Map.html#acce63123ff60132b4b89d91e849f0013">Update</a>(this.x, this.y, this.x-1, this.y);</div>
+<div class="line"><span class="lineno">   34</span>            this.x--;</div>
+<div class="line"><span class="lineno">   35</span>            this.energy--;</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">catch</span> (OccupiedPositionException exceptions)</div>
+<div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x-1}, {this.y}) ocupada&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">catch</span> (OutOfMapException exceptions)</div>
+<div class="line"><span class="lineno">   42</span>        {</div>
+<div class="line"><span class="lineno">   43</span>            Console.WriteLine($<span class="stringliteral">&quot;\nPosição ({this.x-1}, {this.y}) fora do mapa&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>        }</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -478,12 +465,12 @@ Properties</h2></td></tr>
 
 <p>quantidade de items coletados, pontos e energia atual. </p>
 
-<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00133">133</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>    {</div>
-<div class="line"><span class="lineno">  135</span>        map.PrintMap();</div>
-<div class="line"><span class="lineno">  136</span>        (<span class="keywordtype">int</span> ItensBag, <span class="keywordtype">int</span> TotalPoints) = this.GetBagInfo();</div>
-<div class="line"><span class="lineno">  137</span>        Console.WriteLine($<span class="stringliteral">&quot;\nItens Bag: {ItensBag} - Total Pontos: {TotalPoints} - Energia: {this.energy} - x:{this.x}, y: {this.y}\n\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Robot_8cs_source.html#l00119">119</a> of file <a class="el" href="Robot_8cs_source.html">Robot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>        map.PrintMap();</div>
+<div class="line"><span class="lineno">  122</span>        (<span class="keywordtype">int</span> ItensBag, <span class="keywordtype">int</span> TotalPoints) = this.GetBagInfo();</div>
+<div class="line"><span class="lineno">  123</span>        Console.WriteLine($<span class="stringliteral">&quot;\nItens Bag: {ItensBag} - Total Pontos: {TotalPoints} - Energia: {this.energy} - x:{this.x}, y: {this.y}\n\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
