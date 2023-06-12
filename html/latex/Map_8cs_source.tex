@@ -27,166 +27,187 @@
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ GenerateRandom();}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00039}00039\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00043}\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}\ (\mbox{\hyperlink{classProjetoFinal_1_1ItemMap}{ItemMap}}\ Item,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00043}\mbox{\hyperlink{classProjetoFinal_1_1Map_a87d1e3fa06cad119c4fb9093c2159562}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Map_a87d1e3fa06cad119c4fb9093c2159562}{UpdateMap}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ \textcolor{keywordtype}{int}\ level)}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00044}00044\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ Item;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00046}00046\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00050}\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(\textcolor{keywordtype}{int}\ x\_old,\ \textcolor{keywordtype}{int}\ y\_old,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00051}00051\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0\ ||\ y\ <\ 0\ ||\ x>\ this.w-\/1\ ||\ y>\ this.h-\/1)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1OutOfMapException}{OutOfMapException}}();}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsAllowed(x,\ y))}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ Matriz[x\_old,\ y\_old];}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x\_old,\ y\_old]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Empty}{Empty}}();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ this.w\ =\ w\ <=\ 30\ ?\ w\ :\ 30;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ this.h\ =\ h\ <=\ 30\ ?\ h\ :\ 30;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ Matriz\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1ItemMap}{ItemMap}}[w,\ h];}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.GetLength(0);\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[i,\ j]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Empty}{Empty}}();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ 1)\ }
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ GenerateFixed();}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1OccupiedPositionException}{OccupiedPositionException}}();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ GenerateRandom();}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00065}00065\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00069}\mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{00069}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Jewel>\ \mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{GetJewels}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00070}00070\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ \textcolor{keyword}{new}\ List<Jewel>();}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}}?\ jewel\ =\ GetJewel(Coords[i,\ 0],\ Coords[i,\ 1]);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jewel\ is\ not\ \textcolor{keyword}{null})\ NearJewels.Add(jewel);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NearJewels;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00079}00079\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00083}\mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{00083}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Radio>\ \mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{GetRadios}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00084}00084\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ List<Radio>\ NearRadios\ =\ \textcolor{keyword}{new}\ List<Radio>();}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Radio}{Radio}}?\ radio\ =\ GetRadio(Coords[i,\ 0],\ Coords[i,\ 1]);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (radio\ is\ not\ \textcolor{keyword}{null})\ NearRadios.Add(radio);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00070}\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}\ (\mbox{\hyperlink{classProjetoFinal_1_1ItemMap}{ItemMap}}\ Item,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ Item;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00077}\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(\textcolor{keywordtype}{int}\ x\_old,\ \textcolor{keywordtype}{int}\ y\_old,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0\ ||\ y\ <\ 0\ ||\ x>\ this.w-\/1\ ||\ y>\ this.h-\/1)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1OutOfMapException}{OutOfMapException}}();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsAllowed(x,\ y))}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ Matriz[x\_old,\ y\_old];}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x\_old,\ y\_old]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Empty}{Empty}}();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1OccupiedPositionException}{OccupiedPositionException}}();}
 \DoxyCodeLine{\Hypertarget{Map_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NearRadios;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00093}00093\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classProjetoFinal_1_1Radio}{Radio}}?\ GetRadio(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00098}00098\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[x,\ y]\ is\ \mbox{\hyperlink{classProjetoFinal_1_1Radio}{Radio}}\ radio)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Empty}{Empty}}();}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ radio;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00105}00105\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{private}\ Jewel?\ GetJewel(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00110}00110\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[x,\ y]\ is\ Jewel\ jewel)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ \textcolor{keyword}{new}\ Empty();}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jewel;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00117}00117\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00121}\mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{00121}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}?\ \mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{GetRechargeable}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[Coords[i,\ 0],\ Coords[i,\ 1]]\ is\ \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}\ r)\ \textcolor{keywordflow}{return}\ r;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00126}00126\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00130}00130\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}[,]\ GenerateCoord(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00131}00131\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[4,\ 2]\{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{x,\ \ y+1\ <\ w-\/1\ ?\ y+1\ :\ w-\/1\},}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{x,\ y-\/1\ >\ 0\ ?\ y-\/1\ :\ 0\},}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \{x+1\ <\ h-\/1\ ?\ x+1\ :\ h-\/1,\ y\},}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \{x-\/1\ >\ 0\ ?\ x-\/1\ :\ 0,\ y\}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Coords;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00139}00139\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ IsAllowed(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00144}00144\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Matriz[x,\ y]\ is\ Empty;}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00146}00146\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ PrintMap()\ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.\ GetLength(0);\ i++)\{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(Matriz[i,\ j]);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00154}00154\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsDone()}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00156}00156\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.GetLength(0);\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[i,\ j]\ is\ Jewel)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00163}00163\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ GenerateFixed()}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00168}00168\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelRed(),\ 1,\ 9);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelRed(),\ 8,\ 8);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelGreen(),\ 9,\ 1);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelGreen(),\ 7,\ 6);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelBlue(),\ 9,\ 4);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelBlue(),\ 2,\ 1);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 0);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 1);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 2);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 3);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 4);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 5);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 6);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 5,\ 9);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 3,\ 9);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 8,\ 3);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 2,\ 5);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 1,\ 4);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00188}00188\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00192}00192\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ GenerateRandom()}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00193}00193\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ Random\ r\ =\ \textcolor{keyword}{new}\ Random();}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 3;\ x++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelBlue(),\ xRandom,\ yRandom);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 3;\ x++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelGreen(),\ xRandom,\ yRandom);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 3;\ x++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelRed(),\ xRandom,\ yRandom);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 10;\ x++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ xRandom,\ yRandom);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 10;\ x++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ xRandom,\ yRandom);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 1;\ x++)}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Radioactive(),\ xRandom,\ yRandom);}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00231}00231\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00232}00232\ }
-\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00233}00233\ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00096}\mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Jewel>\ \mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{GetJewels}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ \textcolor{keyword}{new}\ List<Jewel>();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}}?\ jewel\ =\ GetJewel(Coords[i,\ 0],\ Coords[i,\ 1]);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jewel\ is\ not\ \textcolor{keyword}{null})\ NearJewels.Add(jewel);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NearJewels;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00110}\mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{00110}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Radio>\ \mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{GetRadios}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ List<Radio>\ NearRadios\ =\ \textcolor{keyword}{new}\ List<Radio>();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Radio}{Radio}}?\ radio\ =\ GetRadio(Coords[i,\ 0],\ Coords[i,\ 1]);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (radio\ is\ not\ \textcolor{keyword}{null})\ NearRadios.Add(radio);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NearRadios;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classProjetoFinal_1_1Radio}{Radio}}?\ GetRadio(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00125}00125\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[x,\ y]\ is\ \mbox{\hyperlink{classProjetoFinal_1_1Radio}{Radio}}\ radio)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Empty}{Empty}}();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ radio;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{private}\ Jewel?\ GetJewel(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[x,\ y]\ is\ Jewel\ jewel)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ Matriz[x,\ y]\ =\ \textcolor{keyword}{new}\ Empty();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jewel;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00148}\mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{00148}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}?\ \mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{GetRechargeable}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ GenerateCoord(x,\ y);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Coords.GetLength(0);\ i++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[Coords[i,\ 0],\ Coords[i,\ 1]]\ is\ \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}\ r)\ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}[,]\ GenerateCoord(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}[,]\ Coords\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[4,\ 2]\{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \{x,\ \ y+1\ <\ w-\/1\ ?\ y+1\ :\ w-\/1\},}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{x,\ y-\/1\ >\ 0\ ?\ y-\/1\ :\ 0\},}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{x+1\ <\ h-\/1\ ?\ x+1\ :\ h-\/1,\ y\},}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \{x-\/1\ >\ 0\ ?\ x-\/1\ :\ 0,\ y\}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Coords;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00170}00170\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ IsAllowed(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Matriz[x,\ y]\ is\ Empty;}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00174}00174\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ PrintMap()\ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.\ GetLength(0);\ i++)\{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(Matriz[i,\ j]);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00182}00182\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsDone()}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Matriz.GetLength(0);\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=\ 0;\ j\ <\ Matriz.GetLength(1);\ j++)\{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Matriz[i,\ j]\ is\ Jewel)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00190}00190\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00194}00194\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ GenerateFixed()}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00195}00195\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelRed(),\ 1,\ 9);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelRed(),\ 8,\ 8);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelGreen(),\ 9,\ 1);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelGreen(),\ 7,\ 6);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelBlue(),\ 9,\ 4);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelBlue(),\ 2,\ 1);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 0);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 1);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 2);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 3);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 4);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 5);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ 5,\ 6);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 5,\ 9);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 3,\ 9);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 8,\ 3);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 2,\ 5);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ 1,\ 4);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00215}00215\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00219}00219\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ GenerateRandom()}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00220}00220\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ Random\ r\ =\ \textcolor{keyword}{new}\ Random();}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 3;\ x++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelBlue(),\ xRandom,\ yRandom);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 3;\ x++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelGreen(),\ xRandom,\ yRandom);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 3;\ x++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ JewelRed(),\ xRandom,\ yRandom);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 10;\ x++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Water(),\ xRandom,\ yRandom);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 10;\ x++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Tree(),\ xRandom,\ yRandom);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 1;\ x++)}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xRandom\ =\ r.Next(0,\ w);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yRandom\ =\ r.Next(0,\ h);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{new}\ Radioactive(),\ xRandom,\ yRandom);}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00258}00258\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{Map_8cs_source_l00260}00260\ \}}
 
 \end{DoxyCode}

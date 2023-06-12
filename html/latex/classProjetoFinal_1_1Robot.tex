@@ -16,6 +16,8 @@ Inheritance diagram for Projeto\+Final.\+Robot\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classProjetoFinal_1_1Robot_ab6a43e25eeb6bd835d0b56febe33b3db}{Robot}} (\mbox{\hyperlink{classProjetoFinal_1_1Map}{Map}} map, int x=0, int y=0, int energy=5)
 \begin{DoxyCompactList}\small\item\em Posição inicial do robo, energia atual e nível de jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9}{Update\+Robot}} (int w, int h, int level, int energy=5)
+\begin{DoxyCompactList}\small\item\em Atualizar robo toda vez que muda de level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{Move\+Up}} ()
 \begin{DoxyCompactList}\small\item\em método de deslocamento. Up / Down / Right / Left tratamentos de exceptions \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProjetoFinal_1_1Robot_ada9f8242dd71d420151269fd0b24a22c}{Move\+Down}} ()
@@ -95,18 +97,18 @@ método de recarga de energia do robo e coleta de joias
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00097}{97}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00109}{109}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ Rechargeable?\ RechargeEnergy\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{GetRechargeable}}(this.x,\ this.y);}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ RechargeEnergy?.Recharge(\textcolor{keyword}{this});}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{GetJewels}}(this.x,\ this.y);}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ List<Radio>\ NearRadios\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{GetRadios}}(this.x,\ this.y);}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Jewel\ j\ \textcolor{keywordflow}{in}\ NearJewels)}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ Bag.Add(j);}
-\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ Rechargeable?\ RechargeEnergy\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{GetRechargeable}}(this.x,\ this.y);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ RechargeEnergy?.Recharge(\textcolor{keyword}{this});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{GetJewels}}(this.x,\ this.y);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ List<Radio>\ NearRadios\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{GetRadios}}(this.x,\ this.y);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Jewel\ j\ \textcolor{keywordflow}{in}\ NearJewels)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ Bag.Add(j);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classProjetoFinal_1_1Robot_ad8fd5ecb69a28be87b614341143728b4}\label{classProjetoFinal_1_1Robot_ad8fd5ecb69a28be87b614341143728b4} 
@@ -117,13 +119,13 @@ Definition at line \mbox{\hyperlink{Robot_8cs_source_l00097}{97}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00125}{125}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00137}{137}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00126\ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.energy\ >\ 0;}
-\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.energy\ >\ 0;}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classProjetoFinal_1_1Robot_ada9f8242dd71d420151269fd0b24a22c}\label{classProjetoFinal_1_1Robot_ada9f8242dd71d420151269fd0b24a22c} 
@@ -134,26 +136,26 @@ Definition at line \mbox{\hyperlink{Robot_8cs_source_l00125}{125}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00046}{46}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00058}{58}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x+1,\ this.y);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ this.x++;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ ocupada"{}});}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x+1,\ this.y);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ this.x++;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ ocupada"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classProjetoFinal_1_1Robot_a9559eff6cb0fee653132ea6fa7c0c40f}\label{classProjetoFinal_1_1Robot_a9559eff6cb0fee653132ea6fa7c0c40f} 
@@ -164,26 +166,26 @@ Definition at line \mbox{\hyperlink{Robot_8cs_source_l00046}{46}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00078}{78}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00090}{90}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y-\/1);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ this.y-\/-\/;}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ ocupada"{}});}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y-\/1);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ this.y-\/-\/;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ ocupada"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classProjetoFinal_1_1Robot_afacea3713c5979643caa42d83c0cf005}\label{classProjetoFinal_1_1Robot_afacea3713c5979643caa42d83c0cf005} 
@@ -194,26 +196,26 @@ Definition at line \mbox{\hyperlink{Robot_8cs_source_l00078}{78}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00062}{62}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00074}{74}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y+1);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ this.y++;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ ocupada"{}});}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y+1);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ this.y++;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ ocupada"{}});}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}\label{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a} 
@@ -228,26 +230,26 @@ método de deslocamento. Up / Down / Right / Left tratamentos de exceptions
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00030}{30}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00042}{42}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x-\/1,\ this.y);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ this.x-\/-\/;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ ocupada"{}});}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x-\/1,\ this.y);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ this.x-\/-\/;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ ocupada"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}\label{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952} 
@@ -262,15 +264,40 @@ quantidade de items coletados, pontos e energia atual.
 
 
 
-Definition at line \mbox{\hyperlink{Robot_8cs_source_l00119}{119}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00131}{131}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00120\ \ \ \ \ \{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ map.PrintMap();}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int}\ ItensBag,\ \textcolor{keywordtype}{int}\ TotalPoints)\ =\ this.GetBagInfo();}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nItens\ Bag:\ \{ItensBag\}\ -\/\ Total\ Pontos:\ \{TotalPoints\}\ -\/\ Energia:\ \{this.energy\}\ -\/\ x:\{this.x\},\ y:\ \{this.y\}\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ map.PrintMap();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int}\ ItensBag,\ \textcolor{keywordtype}{int}\ TotalPoints)\ =\ this.GetBagInfo();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nItens\ Bag:\ \{ItensBag\}\ -\/\ Total\ Pontos:\ \{TotalPoints\}\ -\/\ Energia:\ \{this.energy\}\ -\/\ x:\{this.x\},\ y:\ \{this.y\}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9}\label{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9} 
+\index{ProjetoFinal.Robot@{ProjetoFinal.Robot}!UpdateRobot@{UpdateRobot}}
+\index{UpdateRobot@{UpdateRobot}!ProjetoFinal.Robot@{ProjetoFinal.Robot}}
+\doxysubsubsection{\texorpdfstring{UpdateRobot()}{UpdateRobot()}}
+{\footnotesize\ttfamily void Projeto\+Final.\+Robot.\+Update\+Robot (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{level,  }\item[{int}]{energy = {\ttfamily 5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Atualizar robo toda vez que muda de level. 
+
+this.\+map = map;
+
+Definition at line \mbox{\hyperlink{Robot_8cs_source_l00029}{29}} of file \mbox{\hyperlink{Robot_8cs_source}{Robot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ this.x\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this.y\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ this.energy\ =\ energy;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ this.map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a87d1e3fa06cad119c4fb9093c2159562}{UpdateMap}}(w,\ h,\ level);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ this.map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{this},\ this.x,\ this.y);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
