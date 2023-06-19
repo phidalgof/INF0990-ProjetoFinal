@@ -75,6 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="classProjetoFinal_1_1JewelCollector-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ProjetoFinal.JewelCollector Class Reference</div></div>
 </div><!--header-->
@@ -88,6 +89,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8457857e0cb9b1320c815f91480f325"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">Main</a> ()</td></tr>
 <tr class="memdesc:ad8457857e0cb9b1320c815f91480f325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método principal: inicio o jogo.  <br /></td></tr>
 <tr class="separator:ad8457857e0cb9b1320c815f91480f325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a4881bce539ac0d962e909cbe75ba848f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4881bce539ac0d962e909cbe75ba848f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propriedade que determina estado do jogo.  <br /></td></tr>
+<tr class="separator:a4881bce539ac0d962e909cbe75ba848f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe JewelCollector: define a função principal do jogo definição de movimentos e o seu controle completando exemplo disponibilizado no git. </p>
@@ -119,37 +126,69 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Método principal: inicio o jogo. </p>
 
+<p class="definition">Definition at line <a class="el" href="JewelCollector_8cs_source.html#l00026">26</a> of file <a class="el" href="JewelCollector_8cs_source.html">JewelCollector.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                              {</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordtype">int</span> w = 10;</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordtype">int</span> h = 10;</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordtype">int</span> level = 1;</div>
+<div class="line"><span class="lineno">   31</span>        Map map = <span class="keyword">new</span> Map (w, h, level);</div>
+<div class="line"><span class="lineno">   32</span>        Robot robot = <span class="keyword">new</span> Robot(map);</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">while</span>(<a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a>)</div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            robot.UpdateRobot(w, h, level);</div>
+<div class="line"><span class="lineno">   36</span>            Console.WriteLine(<span class="stringliteral">&quot;\n* * * * JEWEL COLLECTOR * * * *&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>            Console.WriteLine($<span class="stringliteral">&quot;Level: {level}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordflow">try</span>{</div>
+<div class="line"><span class="lineno">   39</span>                <span class="keywordtype">bool</span> Result = Run(robot);</div>
+<div class="line"><span class="lineno">   40</span>                <span class="keywordflow">if</span>(Result)</div>
+<div class="line"><span class="lineno">   41</span>                {</div>
+<div class="line"><span class="lineno">   42</span>                    w++;</div>
+<div class="line"><span class="lineno">   43</span>                    h++;</div>
+<div class="line"><span class="lineno">   44</span>                    level++;</div>
+<div class="line"><span class="lineno">   45</span>                }</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   47</span>                {</div>
+<div class="line"><span class="lineno">   48</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   49</span>                }</div>
+<div class="line"><span class="lineno">   50</span>            }</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">catch</span>(RanOutOfEnergyException exceptions)</div>
+<div class="line"><span class="lineno">   52</span>            {</div>
+<div class="line"><span class="lineno">   53</span>                Console.WriteLine(<span class="stringliteral">&quot;Robô sem energia!&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>                Console.WriteLine(<span class="stringliteral">&quot;* * * Game Over * * *&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>                <a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="ttc" id="aclassProjetoFinal_1_1JewelCollector_html_a4881bce539ac0d962e909cbe75ba848f"><div class="ttname"><a href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">ProjetoFinal.JewelCollector.Running</a></div><div class="ttdeci">static bool Running</div><div class="ttdoc">Propriedade que determina estado do jogo.</div><div class="ttdef"><b>Definition</b> <a href="JewelCollector_8cs_source.html#l00022">JewelCollector.cs:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a4881bce539ac0d962e909cbe75ba848f" name="a4881bce539ac0d962e909cbe75ba848f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4881bce539ac0d962e909cbe75ba848f">&#9670;&#160;</a></span>Running</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjetoFinal.JewelCollector.Running</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Propriedade que determina estado do jogo. </p>
+
 <p class="definition">Definition at line <a class="el" href="JewelCollector_8cs_source.html#l00022">22</a> of file <a class="el" href="JewelCollector_8cs_source.html">JewelCollector.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                              {</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordtype">int</span> w = 10;</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordtype">int</span> h = 10;</div>
-<div class="line"><span class="lineno">   25</span>        <span class="keywordtype">int</span> level = 1;</div>
-<div class="line"><span class="lineno">   26</span>        Map map = <span class="keyword">new</span> Map (w, h, level);</div>
-<div class="line"><span class="lineno">   27</span>        Robot robot = <span class="keyword">new</span> Robot(map);</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div>
-<div class="line"><span class="lineno">   29</span>        {</div>
-<div class="line"><span class="lineno">   30</span>            robot.UpdateRobot(w, h, level);</div>
-<div class="line"><span class="lineno">   31</span>            Console.WriteLine($<span class="stringliteral">&quot;Level: {level}&quot;</span>);</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">try</span>{</div>
-<div class="line"><span class="lineno">   34</span>                <span class="keywordtype">bool</span> Result = Run(robot);</div>
-<div class="line"><span class="lineno">   35</span>                <span class="keywordflow">if</span>(Result)</div>
-<div class="line"><span class="lineno">   36</span>                {</div>
-<div class="line"><span class="lineno">   37</span>                    w++;</div>
-<div class="line"><span class="lineno">   38</span>                    h++;</div>
-<div class="line"><span class="lineno">   39</span>                    level++;</div>
-<div class="line"><span class="lineno">   40</span>                }</div>
-<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   42</span>                {</div>
-<div class="line"><span class="lineno">   43</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   44</span>                }</div>
-<div class="line"><span class="lineno">   45</span>            }</div>
-<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">catch</span>(RanOutOfEnergyException exceptions)</div>
-<div class="line"><span class="lineno">   47</span>            {</div>
-<div class="line"><span class="lineno">   48</span>                Console.WriteLine(<span class="stringliteral">&quot;Robo sem energia!&quot;</span>);</div>
-<div class="line"><span class="lineno">   49</span>            }</div>
-<div class="line"><span class="lineno">   50</span>        }</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>

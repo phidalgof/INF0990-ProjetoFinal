@@ -19,102 +19,102 @@
 \DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00025}00025\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00029}\mbox{\hyperlink{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9}{UpdateRobot}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ \textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ energy=5)}
 \DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00030}00030\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ this.x\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ this.y\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ this.energy\ =\ energy;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ this.map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a87d1e3fa06cad119c4fb9093c2159562}{UpdateMap}}(w,\ h,\ level);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ this.map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{this},\ this.x,\ this.y);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00037}00037\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00042}\mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{MoveUp}}()\{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x-\/1,\ this.y);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ this.x-\/-\/;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{classProjetoFinal_1_1OccupiedPositionException}{OccupiedPositionException}}\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ ocupada"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{classProjetoFinal_1_1OutOfMapException}{OutOfMapException}}\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00057}00057\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveDown()\{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x+1,\ this.y);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ this.x++;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ ocupada"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00073}00073\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveRight()\{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y+1);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ this.y++;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ ocupada"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00089}00089\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveLeft()\{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y-\/1);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ this.y-\/-\/;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ ocupada"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ fora\ do\ mapa"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00105}00105\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00109}\mbox{\hyperlink{classProjetoFinal_1_1Robot_a0777ccf6e47e9394912c93f7455e0f0d}{00109}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_a0777ccf6e47e9394912c93f7455e0f0d}{Get}}()}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00110}00110\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}?\ RechargeEnergy\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{GetRechargeable}}(this.x,\ this.y);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ RechargeEnergy?.Recharge(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{GetJewels}}(this.x,\ this.y);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ List<Radio>\ NearRadios\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{GetRadios}}(this.x,\ this.y);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}}\ j\ \textcolor{keywordflow}{in}\ NearJewels)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Bag.Add(j);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00117}00117\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00121}00121\ \ \ \ \ \textcolor{keyword}{private}\ (int,\ int)\ GetBagInfo()}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00122}00122\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Points\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}}\ j\ \textcolor{keywordflow}{in}\ this.Bag)}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ Points\ +=\ j.Points;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this.Bag.Count,\ Points);}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00127}00127\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00131}\mbox{\hyperlink{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}{00131}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}{PrintMap}}()}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00132}00132\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ map.PrintMap();}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int}\ ItensBag,\ \textcolor{keywordtype}{int}\ TotalPoints)\ =\ this.GetBagInfo();}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nItens\ Bag:\ \{ItensBag\}\ -\/\ Total\ Pontos:\ \{TotalPoints\}\ -\/\ Energia:\ \{this.energy\}\ -\/\ x:\{this.x\},\ y:\ \{this.y\}\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00136}00136\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ HasEnergy()}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00138}00138\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.energy\ >\ 0;}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00140}00140\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ this.x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ this.y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ this.energy\ =\ energy;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ this.map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a87d1e3fa06cad119c4fb9093c2159562}{UpdateMap}}(w,\ h,\ level);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ this.map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a44f7b2a282f3ae6f1be32f6f58dd3c62}{Insert}}(\textcolor{keyword}{this},\ this.x,\ this.y);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00041}\mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{MoveUp}}()\{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x-\/1,\ this.y);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ this.x-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{classProjetoFinal_1_1OccupiedPositionException}{OccupiedPositionException}}\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ ocupada"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{classProjetoFinal_1_1OutOfMapException}{OutOfMapException}}\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x-\/1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveDown()\{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x+1,\ this.y);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ this.x++;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ ocupada"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x+1\},\ \{this.y\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveRight()\{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y+1);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ this.y++;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ ocupada"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y+1\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveLeft()\{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_acce63123ff60132b4b89d91e849f0013}{Update}}(this.x,\ this.y,\ this.x,\ this.y-\/1);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ this.y-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ this.energy-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OccupiedPositionException\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ ocupada"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (OutOfMapException\ exceptions)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nPosição\ (\{this.x\},\ \{this.y-\/1\})\ fora\ do\ mapa"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00108}\mbox{\hyperlink{classProjetoFinal_1_1Robot_a0777ccf6e47e9394912c93f7455e0f0d}{00108}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_a0777ccf6e47e9394912c93f7455e0f0d}{Get}}()}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interfaceProjetoFinal_1_1Rechargeable}{Rechargeable}}?\ RechargeEnergy\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_aaa992e0666e95e123406ee94a671dd79}{GetRechargeable}}(this.x,\ this.y);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ RechargeEnergy?.Recharge(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ List<Jewel>\ NearJewels\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_af71c2b3d836a394f54b1a253dee38819}{GetJewels}}(this.x,\ this.y);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ List<Radio>\ NearRadios\ =\ map.\mbox{\hyperlink{classProjetoFinal_1_1Map_a037b34aa08a7a2b0078abbde602f7ffa}{GetRadios}}(this.x,\ this.y);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}}\ j\ \textcolor{keywordflow}{in}\ NearJewels)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ Bag.Add(j);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00120}00120\ \ \ \ \ \textcolor{keyword}{private}\ (int,\ int)\ GetBagInfo()}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Points\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{classProjetoFinal_1_1Jewel}{Jewel}}\ j\ \textcolor{keywordflow}{in}\ this.Bag)}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ Points\ +=\ j.Points;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this.Bag.Count,\ Points);}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00130}\mbox{\hyperlink{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}{00130}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}{PrintMap}}()}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ map.PrintMap();}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int}\ ItensBag,\ \textcolor{keywordtype}{int}\ TotalPoints)\ =\ this.GetBagInfo();}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nItens\ Bag:\ \{ItensBag\}\ -\/\ Total\ Pontos:\ \{TotalPoints\}\ -\/\ Energia:\ \{this.energy\}\ -\/\ x:\{this.x\},\ y:\ \{this.y\}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ HasEnergy()}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.energy\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Robot_8cs_source_l00140}00140\ \}}
 
 \end{DoxyCode}

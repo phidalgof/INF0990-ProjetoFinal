@@ -85,73 +85,97 @@ $(function() {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">static</span> <span class="keyword">event</span> MoveRight OnMoveRight;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> <span class="keyword">event</span> MoveLeft OnMoveLeft;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> <span class="keyword">event</span> WhenGet Get;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">   22</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">Main</a>() {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">int</span> w = 10;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">int</span> h = 10;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">int</span> level = 1;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_class" href="classProjetoFinal_1_1Map.html">Map</a> map = <span class="keyword">new</span> <a class="code hl_class" href="classProjetoFinal_1_1Map.html">Map</a> (w, h, level);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="classProjetoFinal_1_1Robot.html">Robot</a> robot = <span class="keyword">new</span> <a class="code hl_class" href="classProjetoFinal_1_1Robot.html">Robot</a>(map);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#a7810ea7aa5d1a3c6dbcb7b2830f3fdf9">UpdateRobot</a>(w, h, level);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            Console.WriteLine($<span class="stringliteral">&quot;Level: {level}&quot;</span>);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">try</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordtype">bool</span> Result = Run(robot);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordflow">if</span>(Result)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                    w++;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    h++;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                    level++;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">catch</span>(<a class="code hl_class" href="classProjetoFinal_1_1RanOutOfEnergyException.html">RanOutOfEnergyException</a> exceptions)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                Console.WriteLine(<span class="stringliteral">&quot;Robo sem energia!&quot;</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> Run(<a class="code hl_class" href="classProjetoFinal_1_1Robot.html">Robot</a> robot)  </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        OnMoveUp = robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#ae89d59f2b74b3c0a2cc9effa6abd2a3a">MoveUp</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        OnMoveDown = robot.MoveDown;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        OnMoveRight = robot.MoveRight;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        OnMoveLeft = robot.MoveLeft;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        Get = robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#a0777ccf6e47e9394912c93f7455e0f0d">Get</a>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span>(!robot.HasEnergy()) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="classProjetoFinal_1_1RanOutOfEnergyException.html">RanOutOfEnergyException</a>();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#a34b6023d0df2882bbe1ef9285fc5e952">PrintMap</a>();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            Console.WriteLine(<span class="stringliteral">&quot;\n Esperando comandos ...: &quot;</span>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            ConsoleKeyInfo command = Console.ReadKey(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">switch</span> (command.Key.ToString())</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;W&quot;</span>: Console.WriteLine($<span class="stringliteral">&quot;\n Comando:{command.Key.ToString()}&quot;</span>); OnMoveUp() ; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;S&quot;</span> : Console.WriteLine($<span class="stringliteral">&quot;\n Comando:{command.Key.ToString()}&quot;</span>); OnMoveDown() ; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;D&quot;</span> : Console.WriteLine($<span class="stringliteral">&quot;\n Comando:{command.Key.ToString()}&quot;</span>); OnMoveRight() ; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;A&quot;</span> : Console.WriteLine($<span class="stringliteral">&quot;\n Comando:{command.Key.ToString()}&quot;</span>); OnMoveLeft() ; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;G&quot;</span> : Console.WriteLine($<span class="stringliteral">&quot;\n Comando:{command.Key.ToString()}&quot;</span>); Get() ; <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;Q&quot;</span> : <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="keywordflow">default</span>: Console.WriteLine($<span class="stringliteral">&quot;\n Comando inválido:{command.Key.ToString()}&quot;</span>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        } <span class="keywordflow">while</span> (!robot.map.IsDone());</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">   22</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">   26</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">Main</a>() {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">int</span> w = 10;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">int</span> h = 10;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">int</span> level = 1;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_class" href="classProjetoFinal_1_1Map.html">Map</a> map = <span class="keyword">new</span> <a class="code hl_class" href="classProjetoFinal_1_1Map.html">Map</a> (w, h, level);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_class" href="classProjetoFinal_1_1Robot.html">Robot</a> robot = <span class="keyword">new</span> <a class="code hl_class" href="classProjetoFinal_1_1Robot.html">Robot</a>(map);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">while</span>(<a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#a7810ea7aa5d1a3c6dbcb7b2830f3fdf9">UpdateRobot</a>(w, h, level);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            Console.WriteLine(<span class="stringliteral">&quot;\n* * * * JEWEL COLLECTOR * * * *&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            Console.WriteLine($<span class="stringliteral">&quot;Level: {level}\n&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">try</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordtype">bool</span> Result = Run(robot);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="keywordflow">if</span>(Result)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    w++;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    h++;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    level++;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">catch</span>(<a class="code hl_class" href="classProjetoFinal_1_1RanOutOfEnergyException.html">RanOutOfEnergyException</a> exceptions)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                Console.WriteLine(<span class="stringliteral">&quot;Robô sem energia!&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                Console.WriteLine(<span class="stringliteral">&quot;* * * Game Over * * *&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_property" href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">Running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> Run(<a class="code hl_class" href="classProjetoFinal_1_1Robot.html">Robot</a> robot)  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        OnMoveUp = robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#ae89d59f2b74b3c0a2cc9effa6abd2a3a">MoveUp</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        OnMoveDown = robot.MoveDown;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        OnMoveRight = robot.MoveRight;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        OnMoveLeft = robot.MoveLeft;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        Get = robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#a0777ccf6e47e9394912c93f7455e0f0d">Get</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">if</span>(!robot.HasEnergy()) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_class" href="classProjetoFinal_1_1RanOutOfEnergyException.html">RanOutOfEnergyException</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            robot.<a class="code hl_function" href="classProjetoFinal_1_1Robot.html#a34b6023d0df2882bbe1ef9285fc5e952">PrintMap</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            Console.WriteLine(<span class="stringliteral">&quot;Esperando comandos ...: &quot;</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            ConsoleKeyInfo command = Console.ReadKey(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">switch</span> (command.Key.ToString())</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;W&quot;</span>: </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                    Console.WriteLine($<span class="stringliteral">&quot;\nMoving Up * * * Comando:{command.Key.ToString()}\n&quot;</span>); </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    OnMoveUp(); </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;S&quot;</span> : </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    Console.WriteLine($<span class="stringliteral">&quot;\nMoving Down * * * Comando:{command.Key.ToString()}\n&quot;</span>); </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    OnMoveDown(); </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;D&quot;</span> : </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    Console.WriteLine($<span class="stringliteral">&quot;\nMoving Right * * * Comando:{command.Key.ToString()}\n&quot;</span>); </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    OnMoveRight(); </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;A&quot;</span> : </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    Console.WriteLine($<span class="stringliteral">&quot;\nMoving Left * * * Comando:{command.Key.ToString()}\n&quot;</span>); </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                    OnMoveLeft(); </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;G&quot;</span> : </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    Console.WriteLine($<span class="stringliteral">&quot;\nColecting * * * Comando:{command.Key.ToString()}\n&quot;</span>); </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    Get(); </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;Q&quot;</span> :</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    Console.WriteLine(<span class="stringliteral">&quot;\n* * * GAME OVER * * *\n&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                <span class="keywordflow">default</span>: </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    Console.WriteLine($<span class="stringliteral">&quot;\nComando inválido:{command.Key.ToString()}\n&quot;</span>); </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        } <span class="keywordflow">while</span> (!robot.map.IsDone());</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
 <div class="ttc" id="aclassProjetoFinal_1_1JewelCollector_html"><div class="ttname"><a href="classProjetoFinal_1_1JewelCollector.html">ProjetoFinal.JewelCollector</a></div><div class="ttdoc">Classe JewelCollector: define a função principal do jogo definição de movimentos e o seu controle com...</div><div class="ttdef"><b>Definition</b> <a href="JewelCollector_8cs_source.html#l00007">JewelCollector.cs:7</a></div></div>
-<div class="ttc" id="aclassProjetoFinal_1_1JewelCollector_html_ad8457857e0cb9b1320c815f91480f325"><div class="ttname"><a href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">ProjetoFinal.JewelCollector.Main</a></div><div class="ttdeci">static void Main()</div><div class="ttdoc">Método principal: inicio o jogo.</div><div class="ttdef"><b>Definition</b> <a href="JewelCollector_8cs_source.html#l00022">JewelCollector.cs:22</a></div></div>
+<div class="ttc" id="aclassProjetoFinal_1_1JewelCollector_html_a4881bce539ac0d962e909cbe75ba848f"><div class="ttname"><a href="classProjetoFinal_1_1JewelCollector.html#a4881bce539ac0d962e909cbe75ba848f">ProjetoFinal.JewelCollector.Running</a></div><div class="ttdeci">static bool Running</div><div class="ttdoc">Propriedade que determina estado do jogo.</div><div class="ttdef"><b>Definition</b> <a href="JewelCollector_8cs_source.html#l00022">JewelCollector.cs:22</a></div></div>
+<div class="ttc" id="aclassProjetoFinal_1_1JewelCollector_html_ad8457857e0cb9b1320c815f91480f325"><div class="ttname"><a href="classProjetoFinal_1_1JewelCollector.html#ad8457857e0cb9b1320c815f91480f325">ProjetoFinal.JewelCollector.Main</a></div><div class="ttdeci">static void Main()</div><div class="ttdoc">Método principal: inicio o jogo.</div><div class="ttdef"><b>Definition</b> <a href="JewelCollector_8cs_source.html#l00026">JewelCollector.cs:26</a></div></div>
 <div class="ttc" id="aclassProjetoFinal_1_1Map_html"><div class="ttname"><a href="classProjetoFinal_1_1Map.html">ProjetoFinal.Map</a></div><div class="ttdoc">Classe Map: define o mapa 2D método para imprimir o mapa na tela método para imprimir items no mapa.</div><div class="ttdef"><b>Definition</b> <a href="Map_8cs_source.html#l00007">Map.cs:8</a></div></div>
 <div class="ttc" id="aclassProjetoFinal_1_1RanOutOfEnergyException_html"><div class="ttname"><a href="classProjetoFinal_1_1RanOutOfEnergyException.html">ProjetoFinal.RanOutOfEnergyException</a></div><div class="ttdef"><b>Definition</b> <a href="Exception_8cs_source.html#l00008">Exception.cs:8</a></div></div>
 <div class="ttc" id="aclassProjetoFinal_1_1Robot_html"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html">ProjetoFinal.Robot</a></div><div class="ttdoc">Classe Robot: define posição do robô Bag: quantidade de joias coletadas métodos de interação com o ma...</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00008">Robot.cs:9</a></div></div>
-<div class="ttc" id="aclassProjetoFinal_1_1Robot_html_a0777ccf6e47e9394912c93f7455e0f0d"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#a0777ccf6e47e9394912c93f7455e0f0d">ProjetoFinal.Robot.Get</a></div><div class="ttdeci">void Get()</div><div class="ttdoc">método de recarga de energia do robo e coleta de joias</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00109">Robot.cs:109</a></div></div>
-<div class="ttc" id="aclassProjetoFinal_1_1Robot_html_a34b6023d0df2882bbe1ef9285fc5e952"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#a34b6023d0df2882bbe1ef9285fc5e952">ProjetoFinal.Robot.PrintMap</a></div><div class="ttdeci">void PrintMap()</div><div class="ttdoc">quantidade de items coletados, pontos e energia atual.</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00131">Robot.cs:131</a></div></div>
+<div class="ttc" id="aclassProjetoFinal_1_1Robot_html_a0777ccf6e47e9394912c93f7455e0f0d"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#a0777ccf6e47e9394912c93f7455e0f0d">ProjetoFinal.Robot.Get</a></div><div class="ttdeci">void Get()</div><div class="ttdoc">método de recarga de energia do robo e coleta de joias</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00108">Robot.cs:108</a></div></div>
+<div class="ttc" id="aclassProjetoFinal_1_1Robot_html_a34b6023d0df2882bbe1ef9285fc5e952"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#a34b6023d0df2882bbe1ef9285fc5e952">ProjetoFinal.Robot.PrintMap</a></div><div class="ttdeci">void PrintMap()</div><div class="ttdoc">quantidade de items coletados, pontos e energia atual.</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00130">Robot.cs:130</a></div></div>
 <div class="ttc" id="aclassProjetoFinal_1_1Robot_html_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#a7810ea7aa5d1a3c6dbcb7b2830f3fdf9">ProjetoFinal.Robot.UpdateRobot</a></div><div class="ttdeci">void UpdateRobot(int w, int h, int level, int energy=5)</div><div class="ttdoc">Atualizar robo toda vez que muda de level.</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00029">Robot.cs:29</a></div></div>
-<div class="ttc" id="aclassProjetoFinal_1_1Robot_html_ae89d59f2b74b3c0a2cc9effa6abd2a3a"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#ae89d59f2b74b3c0a2cc9effa6abd2a3a">ProjetoFinal.Robot.MoveUp</a></div><div class="ttdeci">void MoveUp()</div><div class="ttdoc">método de deslocamento. Up / Down / Right / Left tratamentos de exceptions</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00042">Robot.cs:42</a></div></div>
+<div class="ttc" id="aclassProjetoFinal_1_1Robot_html_ae89d59f2b74b3c0a2cc9effa6abd2a3a"><div class="ttname"><a href="classProjetoFinal_1_1Robot.html#ae89d59f2b74b3c0a2cc9effa6abd2a3a">ProjetoFinal.Robot.MoveUp</a></div><div class="ttdeci">void MoveUp()</div><div class="ttdoc">método de deslocamento. Up / Down / Right / Left tratamentos de exceptions</div><div class="ttdef"><b>Definition</b> <a href="Robot_8cs_source.html#l00041">Robot.cs:41</a></div></div>
 <div class="ttc" id="anamespaceProjetoFinal_html"><div class="ttname"><a href="namespaceProjetoFinal.html">ProjetoFinal</a></div><div class="ttdef"><b>Definition</b> <a href="Empty_8cs_source.html#l00001">Empty.cs:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

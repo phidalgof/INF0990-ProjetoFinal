@@ -114,10 +114,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a98a0246f722a4a39be3f9638c184ee82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1Map.html#a98a0246f722a4a39be3f9638c184ee82">h</a><code> [get]</code></td></tr>
-<tr class="separator:a98a0246f722a4a39be3f9638c184ee82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf4cc2c8656e2748875eb08e29367b46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1Map.html#acf4cc2c8656e2748875eb08e29367b46">w</a><code> [get]</code></td></tr>
-<tr class="separator:acf4cc2c8656e2748875eb08e29367b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee74443f7285df20d74232c06bf040b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1Map.html#aee74443f7285df20d74232c06bf040b4">Height</a><code> [get]</code></td></tr>
+<tr class="separator:aee74443f7285df20d74232c06bf040b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a7550a16fa4d4ead8b3f366bfacaa9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1Map.html#a8a7550a16fa4d4ead8b3f366bfacaa9a">Weight</a><code> [get]</code></td></tr>
+<tr class="separator:a8a7550a16fa4d4ead8b3f366bfacaa9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920ac5433d6b6aee4e133724d653ca45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjetoFinal_1_1Map.html#a920ac5433d6b6aee4e133724d653ca45">level</a><code> [get]</code></td></tr>
+<tr class="separator:a920ac5433d6b6aee4e133724d653ca45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe Map: define o mapa 2D método para imprimir o mapa na tela método para imprimir items no mapa. </p>
@@ -167,25 +169,25 @@ Properties</h2></td></tr>
 <p>Classe criada pra geração do mapa inicial 10 x 10 Para futuros níveis, incrementa +1 o tamanho do mapa, Ultmo nível: tamanho limite do mapa 30 x 30. </p>
 <p>Geração do mapa dependendo o nível do jogo.</p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00018">18</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        this.w = w &lt;= 30 ? w : 30;</div>
-<div class="line"><span class="lineno">   21</span>        this.h = h &lt;= 30 ? h : 30;</div>
-<div class="line"><span class="lineno">   22</span>        Matriz = <span class="keyword">new</span> ItemMap[w, h];</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz.GetLength(0); i++) {</div>
-<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; Matriz.GetLength(1); j++) {</div>
-<div class="line"><span class="lineno">   25</span>                Matriz[i, j] = <span class="keyword">new</span> Empty();</div>
-<div class="line"><span class="lineno">   26</span>            }</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (level == 1) </div>
-<div class="line"><span class="lineno">   32</span>        {</div>
-<div class="line"><span class="lineno">   33</span>            GenerateFixed();</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">else</span> </div>
-<div class="line"><span class="lineno">   36</span>        {</div>
-<div class="line"><span class="lineno">   37</span>            GenerateRandom();</div>
-<div class="line"><span class="lineno">   38</span>        }</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00019">19</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        this.Weight = w &lt;= 30 ? w : 30;</div>
+<div class="line"><span class="lineno">   22</span>        this.Height = h &lt;= 30 ? h : 30;</div>
+<div class="line"><span class="lineno">   23</span>        Matriz = <span class="keyword">new</span> ItemMap[w, h];</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz.GetLength(0); i++) {</div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; Matriz.GetLength(1); j++) {</div>
+<div class="line"><span class="lineno">   26</span>                Matriz[i, j] = <span class="keyword">new</span> Empty();</div>
+<div class="line"><span class="lineno">   27</span>            }</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">if</span> (level == 1) </div>
+<div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            GenerateFixed();</div>
+<div class="line"><span class="lineno">   35</span>        }</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">   37</span>        {</div>
+<div class="line"><span class="lineno">   38</span>            GenerateRandom();</div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,17 +228,17 @@ Properties</h2></td></tr>
 
 <p>coletar joias se tiver na vizinhança </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00096">96</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>    {</div>
-<div class="line"><span class="lineno">   98</span>        List&lt;Jewel&gt; NearJewels = <span class="keyword">new</span> List&lt;Jewel&gt;();</div>
-<div class="line"><span class="lineno">   99</span>        <span class="keywordtype">int</span>[,] Coords = GenerateCoord(x, y);</div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Coords.GetLength(0); i++)</div>
-<div class="line"><span class="lineno">  101</span>        {</div>
-<div class="line"><span class="lineno">  102</span>            Jewel? jewel = GetJewel(Coords[i, 0], Coords[i, 1]);</div>
-<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">if</span> (jewel is not <span class="keyword">null</span>) NearJewels.Add(jewel);</div>
-<div class="line"><span class="lineno">  104</span>        }</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">return</span> NearJewels;</div>
-<div class="line"><span class="lineno">  106</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00097">97</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        List&lt;Jewel&gt; NearJewels = <span class="keyword">new</span> List&lt;Jewel&gt;();</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordtype">int</span>[,] Coords = GenerateCoord(x, y);</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Coords.GetLength(0); i++)</div>
+<div class="line"><span class="lineno">  102</span>        {</div>
+<div class="line"><span class="lineno">  103</span>            Jewel? jewel = GetJewel(Coords[i, 0], Coords[i, 1]);</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">if</span> (jewel is not <span class="keyword">null</span>) NearJewels.Add(jewel);</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">return</span> NearJewels;</div>
+<div class="line"><span class="lineno">  107</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,17 +278,17 @@ Properties</h2></td></tr>
 
 <p>coletar elemento radiotivo </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00110">110</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
-<div class="line"><span class="lineno">  112</span>        List&lt;Radio&gt; NearRadios = <span class="keyword">new</span> List&lt;Radio&gt;();</div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordtype">int</span>[,] Coords = GenerateCoord(x, y);</div>
-<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Coords.GetLength(0); i++)</div>
-<div class="line"><span class="lineno">  115</span>        {</div>
-<div class="line"><span class="lineno">  116</span>            Radio? radio = GetRadio(Coords[i, 0], Coords[i, 1]);</div>
-<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">if</span> (radio is not <span class="keyword">null</span>) NearRadios.Add(radio);</div>
-<div class="line"><span class="lineno">  118</span>        }</div>
-<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">return</span> NearRadios;</div>
-<div class="line"><span class="lineno">  120</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00111">111</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>    {</div>
+<div class="line"><span class="lineno">  113</span>        List&lt;Radio&gt; NearRadios = <span class="keyword">new</span> List&lt;Radio&gt;();</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordtype">int</span>[,] Coords = GenerateCoord(x, y);</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Coords.GetLength(0); i++)</div>
+<div class="line"><span class="lineno">  116</span>        {</div>
+<div class="line"><span class="lineno">  117</span>            Radio? radio = GetRadio(Coords[i, 0], Coords[i, 1]);</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> (radio is not <span class="keyword">null</span>) NearRadios.Add(radio);</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span> NearRadios;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -326,13 +328,13 @@ Properties</h2></td></tr>
 
 <p>Incrementar a energia do robô conforme itens coletados. </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00148">148</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>                                                      {</div>
-<div class="line"><span class="lineno">  149</span>        <span class="keywordtype">int</span>[,] Coords = GenerateCoord(x, y);</div>
-<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Coords.GetLength(0); i++)</div>
-<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">if</span> (Matriz[Coords[i, 0], Coords[i, 1]] is Rechargeable r) <span class="keywordflow">return</span> r;</div>
-<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  153</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00149">149</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>                                                      {</div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordtype">int</span>[,] Coords = GenerateCoord(x, y);</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Coords.GetLength(0); i++)</div>
+<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">if</span> (Matriz[Coords[i, 0], Coords[i, 1]] is Rechargeable r) <span class="keywordflow">return</span> r;</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -378,10 +380,10 @@ Properties</h2></td></tr>
 
 <p>Posicionamento de itens no mapa. </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00070">70</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>    {</div>
-<div class="line"><span class="lineno">   72</span>        Matriz[x, y] = Item;</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00071">71</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        Matriz[x, y] = Item;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -408,15 +410,15 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00182">182</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
-<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz.GetLength(0); i++) {</div>
-<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j= 0; j &lt; Matriz.GetLength(1); j++){</div>
-<div class="line"><span class="lineno">  186</span>                <span class="keywordflow">if</span> (Matriz[i, j] is Jewel) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  187</span>            }</div>
-<div class="line"><span class="lineno">  188</span>        }</div>
-<div class="line"><span class="lineno">  189</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  190</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00183">183</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>    {</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz.GetLength(0); i++) {</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j= 0; j &lt; Matriz.GetLength(1); j++){</div>
+<div class="line"><span class="lineno">  187</span>                <span class="keywordflow">if</span> (Matriz[i, j] is Jewel) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  188</span>            }</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -443,15 +445,15 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00174">174</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>                           {</div>
-<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz. GetLength(0); i++){</div>
-<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; Matriz.GetLength(1); j++){</div>
-<div class="line"><span class="lineno">  177</span>                Console.Write(Matriz[i, j]);</div>
-<div class="line"><span class="lineno">  178</span>            }</div>
-<div class="line"><span class="lineno">  179</span>            Console.Write(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  180</span>        }</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00175">175</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>                           {</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz. GetLength(0); i++){</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; Matriz.GetLength(1); j++){</div>
+<div class="line"><span class="lineno">  178</span>                Console.Write(Matriz[i, j]);</div>
+<div class="line"><span class="lineno">  179</span>            }</div>
+<div class="line"><span class="lineno">  180</span>            Console.Write(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>        }</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -503,22 +505,22 @@ Properties</h2></td></tr>
 
 <p>Atualicação do mapa apos deslocamento. </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00077">77</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (x &lt; 0 || y &lt; 0 || x&gt; this.w-1 || y&gt; this.h-1)</div>
-<div class="line"><span class="lineno">   80</span>        {        </div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> OutOfMapException();</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (IsAllowed(x, y))</div>
-<div class="line"><span class="lineno">   84</span>        {</div>
-<div class="line"><span class="lineno">   85</span>            Matriz[x, y] = Matriz[x_old, y_old];</div>
-<div class="line"><span class="lineno">   86</span>            Matriz[x_old, y_old] = <span class="keyword">new</span> Empty();</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   89</span>        {</div>
-<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> OccupiedPositionException();</div>
-<div class="line"><span class="lineno">   91</span>        }</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00078">78</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (x &lt; 0 || y &lt; 0 || x&gt; this.Weight-1 || y&gt; this.Height-1)</div>
+<div class="line"><span class="lineno">   81</span>        {        </div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> OutOfMapException();</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">if</span> (IsAllowed(x, y))</div>
+<div class="line"><span class="lineno">   85</span>        {</div>
+<div class="line"><span class="lineno">   86</span>            Matriz[x, y] = Matriz[x_old, y_old];</div>
+<div class="line"><span class="lineno">   87</span>            Matriz[x_old, y_old] = <span class="keyword">new</span> Empty();</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   90</span>        {</div>
+<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> OccupiedPositionException();</div>
+<div class="line"><span class="lineno">   92</span>        }</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -565,32 +567,32 @@ Properties</h2></td></tr>
 <p>atualizar mapa toda vez que muda de level </p>
 <p>Geração do mapa dependendo o nível do jogo.</p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00043">43</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>    </div>
-<div class="line"><span class="lineno">   46</span>        this.w = w &lt;= 30 ? w : 30;</div>
-<div class="line"><span class="lineno">   47</span>        this.h = h &lt;= 30 ? h : 30;</div>
-<div class="line"><span class="lineno">   48</span>        Matriz = <span class="keyword">new</span> ItemMap[w, h];</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz.GetLength(0); i++) {</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; Matriz.GetLength(1); j++) {</div>
-<div class="line"><span class="lineno">   51</span>                Matriz[i, j] = <span class="keyword">new</span> Empty();</div>
-<div class="line"><span class="lineno">   52</span>            }</div>
-<div class="line"><span class="lineno">   53</span>        }</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (level == 1) </div>
-<div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>            GenerateFixed();</div>
-<div class="line"><span class="lineno">   60</span>        }</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">else</span> </div>
-<div class="line"><span class="lineno">   62</span>        {</div>
-<div class="line"><span class="lineno">   63</span>            GenerateRandom();</div>
-<div class="line"><span class="lineno">   64</span>        }</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00044">44</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>    </div>
+<div class="line"><span class="lineno">   47</span>        this.Weight = w &lt;= 30 ? w : 30;</div>
+<div class="line"><span class="lineno">   48</span>        this.Height = h &lt;= 30 ? h : 30;</div>
+<div class="line"><span class="lineno">   49</span>        Matriz = <span class="keyword">new</span> ItemMap[w, h];</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Matriz.GetLength(0); i++) {</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; Matriz.GetLength(1); j++) {</div>
+<div class="line"><span class="lineno">   52</span>                Matriz[i, j] = <span class="keyword">new</span> Empty();</div>
+<div class="line"><span class="lineno">   53</span>            }</div>
+<div class="line"><span class="lineno">   54</span>        }</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (level == 1) </div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            GenerateFixed();</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>            GenerateRandom();</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a98a0246f722a4a39be3f9638c184ee82" name="a98a0246f722a4a39be3f9638c184ee82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98a0246f722a4a39be3f9638c184ee82">&#9670;&#160;</a></span>h</h2>
+<a id="aee74443f7285df20d74232c06bf040b4" name="aee74443f7285df20d74232c06bf040b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee74443f7285df20d74232c06bf040b4">&#9670;&#160;</a></span>Height</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +601,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ProjetoFinal.Map.h</td>
+          <td class="memname">int ProjetoFinal.Map.Height</td>
         </tr>
       </table>
   </td>
@@ -614,8 +616,8 @@ Properties</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="acf4cc2c8656e2748875eb08e29367b46" name="acf4cc2c8656e2748875eb08e29367b46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf4cc2c8656e2748875eb08e29367b46">&#9670;&#160;</a></span>w</h2>
+<a id="a920ac5433d6b6aee4e133724d653ca45" name="a920ac5433d6b6aee4e133724d653ca45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920ac5433d6b6aee4e133724d653ca45">&#9670;&#160;</a></span>level</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -624,7 +626,32 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ProjetoFinal.Map.w</td>
+          <td class="memname">int ProjetoFinal.Map.level</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Map_8cs_source.html#l00012">12</a> of file <a class="el" href="Map_8cs_source.html">Map.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{<span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8a7550a16fa4d4ead8b3f366bfacaa9a" name="a8a7550a16fa4d4ead8b3f366bfacaa9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a7550a16fa4d4ead8b3f366bfacaa9a">&#9670;&#160;</a></span>Weight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProjetoFinal.Map.Weight</td>
         </tr>
       </table>
   </td>

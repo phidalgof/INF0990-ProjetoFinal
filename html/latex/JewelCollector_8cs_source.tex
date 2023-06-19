@@ -14,63 +14,86 @@
 \DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ MoveRight\ OnMoveRight;}
 \DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ MoveLeft\ OnMoveLeft;}
 \DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ WhenGet\ Get;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00022}\mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325}{Main}}()\ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w\ =\ 10;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h\ =\ 10;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Map}{Map}}\ map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Map}{Map}}\ (w,\ h,\ level);}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Robot}{Robot}}\ robot\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot}{Robot}}(map);}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9}{UpdateRobot}}(w,\ h,\ level);}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Level:\ \{level\}"{}});}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Result\ =\ Run(robot);}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Result)}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w++;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h++;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ level++;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(\mbox{\hyperlink{classProjetoFinal_1_1RanOutOfEnergyException}{RanOutOfEnergyException}}\ exceptions)}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Robo\ sem\ energia!"{}});}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00051}00051\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ Run(\mbox{\hyperlink{classProjetoFinal_1_1Robot}{Robot}}\ robot)\ \ }
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00056}00056\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ OnMoveUp\ =\ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{MoveUp}};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ OnMoveDown\ =\ robot.MoveDown;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ OnMoveRight\ =\ robot.MoveRight;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ OnMoveLeft\ =\ robot.MoveLeft;}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ Get\ =\ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_a0777ccf6e47e9394912c93f7455e0f0d}{Get}};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!robot.HasEnergy())\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1RanOutOfEnergyException}{RanOutOfEnergyException}}();}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}{PrintMap}}();}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n\ Esperando\ comandos\ ...:\ "{}});}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ ConsoleKeyInfo\ command\ =\ Console.ReadKey(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (command.Key.ToString())}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}W"{}}:\ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)n\ Comando:\{command.Key.ToString()\}"{}});\ OnMoveUp()\ ;\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}S"{}}\ :\ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)n\ Comando:\{command.Key.ToString()\}"{}});\ OnMoveDown()\ ;\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}D"{}}\ :\ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)n\ Comando:\{command.Key.ToString()\}"{}});\ OnMoveRight()\ ;\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}A"{}}\ :\ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)n\ Comando:\{command.Key.ToString()\}"{}});\ OnMoveLeft()\ ;\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}G"{}}\ :\ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)n\ Comando:\{command.Key.ToString()\}"{}});\ Get()\ ;\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}Q"{}}\ :\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)n\ Comando\ inválido:\{command.Key.ToString()\}"{}});\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (!robot.map.IsDone());}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00081}00081\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00022}\mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_a4881bce539ac0d962e909cbe75ba848f}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_a4881bce539ac0d962e909cbe75ba848f}{Running}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00026}\mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_ad8457857e0cb9b1320c815f91480f325}{Main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_a4881bce539ac0d962e909cbe75ba848f}{Running}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Map}{Map}}\ map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Map}{Map}}\ (w,\ h,\ level);}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1Robot}{Robot}}\ robot\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1Robot}{Robot}}(map);}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_a4881bce539ac0d962e909cbe75ba848f}{Running}})}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_a7810ea7aa5d1a3c6dbcb7b2830f3fdf9}{UpdateRobot}}(w,\ h,\ level);}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n*\ *\ *\ *\ JEWEL\ COLLECTOR\ *\ *\ *\ *"{}});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Level:\ \{level\}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Result\ =\ Run(robot);}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Result)}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w++;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h++;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ level++;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(\mbox{\hyperlink{classProjetoFinal_1_1RanOutOfEnergyException}{RanOutOfEnergyException}}\ exceptions)}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Robô\ sem\ energia!"{}});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}*\ *\ *\ Game\ Over\ *\ *\ *"{}});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProjetoFinal_1_1JewelCollector_a4881bce539ac0d962e909cbe75ba848f}{Running}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ Run(\mbox{\hyperlink{classProjetoFinal_1_1Robot}{Robot}}\ robot)\ \ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ OnMoveUp\ =\ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_ae89d59f2b74b3c0a2cc9effa6abd2a3a}{MoveUp}};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ OnMoveDown\ =\ robot.MoveDown;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ OnMoveRight\ =\ robot.MoveRight;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ OnMoveLeft\ =\ robot.MoveLeft;}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ Get\ =\ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_a0777ccf6e47e9394912c93f7455e0f0d}{Get}};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!robot.HasEnergy())\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classProjetoFinal_1_1RanOutOfEnergyException}{RanOutOfEnergyException}}();}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ robot.\mbox{\hyperlink{classProjetoFinal_1_1Robot_a34b6023d0df2882bbe1ef9285fc5e952}{PrintMap}}();}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Esperando\ comandos\ ...:\ "{}});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ ConsoleKeyInfo\ command\ =\ Console.ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (command.Key.ToString())}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}W"{}}:\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nMoving\ Up\ *\ *\ *\ Comando:\{command.Key.ToString()\}\(\backslash\)n"{}});\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OnMoveUp();\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}S"{}}\ :\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nMoving\ Down\ *\ *\ *\ Comando:\{command.Key.ToString()\}\(\backslash\)n"{}});\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OnMoveDown();\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}D"{}}\ :\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nMoving\ Right\ *\ *\ *\ Comando:\{command.Key.ToString()\}\(\backslash\)n"{}});\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OnMoveRight();\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}A"{}}\ :\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nMoving\ Left\ *\ *\ *\ Comando:\{command.Key.ToString()\}\(\backslash\)n"{}});\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OnMoveLeft();\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}G"{}}\ :\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nColecting\ *\ *\ *\ Comando:\{command.Key.ToString()\}\(\backslash\)n"{}});\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Get();\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}Q"{}}\ :}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n*\ *\ *\ GAME\ OVER\ *\ *\ *\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nComando\ inválido:\{command.Key.ToString()\}\(\backslash\)n"{}});\ }
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (!robot.map.IsDone());}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JewelCollector_8cs_source_l00108}00108\ \}}
 
 \end{DoxyCode}
