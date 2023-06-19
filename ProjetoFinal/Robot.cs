@@ -28,7 +28,6 @@ public class Robot: ItemMap
     /// </summary>
     public void UpdateRobot(int w, int h, int level, int energy=5)
     {
-        ///this.map = map;
         this.x = 0;
         this.y = 0;
         this.energy = energy;

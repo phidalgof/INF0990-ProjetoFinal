@@ -16,20 +16,25 @@ public class JewelCollector {
     static event MoveRight OnMoveRight;
     static event MoveLeft OnMoveLeft;
     static event WhenGet Get;
-/// <summary>
-/// Método principal: inicio o jogo.
-/// </summary>
+    /// <summary>
+	/// Propriedade que determina estado do jogo
+	/// </summary>
+    public static bool Running { get; set; }
+    /// <summary>
+    /// Método principal: inicio o jogo.
+    /// </summary>
     public static void Main() {
+        Running = true;
         int w = 10;
         int h = 10;
         int level = 1;
         Map map = new Map (w, h, level);
         Robot robot = new Robot(map);
-        while(true)
+        while(Running)
         {
             robot.UpdateRobot(w, h, level);
-            Console.WriteLine($"Level: {level}");
-
+            Console.WriteLine("\n* * * * JEWEL COLLECTOR * * * *");
+            Console.WriteLine($"Level: {level}\n");
             try{
                 bool Result = Run(robot);
                 if(Result)
@@ -45,7 +50,9 @@ public class JewelCollector {
             }
             catch(RanOutOfEnergyException exceptions)
             {
-                Console.WriteLine("Robo sem energia!");
+                Console.WriteLine("Robô sem energia!");
+                Console.WriteLine("* * * Game Over * * *");
+                Running = false;
             }
         }
     }
@@ -63,18 +70,37 @@ public class JewelCollector {
         do {
             if(!robot.HasEnergy()) throw new RanOutOfEnergyException();
             robot.PrintMap();
-            Console.WriteLine("\n Esperando comandos ...: ");
+            Console.WriteLine("Esperando comandos ...: ");
             ConsoleKeyInfo command = Console.ReadKey(true);
 
             switch (command.Key.ToString())
             {
-                case "W": Console.WriteLine($"\n Comando:{command.Key.ToString()}"); OnMoveUp() ; break;
-                case "S" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); OnMoveDown() ; break;
-                case "D" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); OnMoveRight() ; break;
-                case "A" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); OnMoveLeft() ; break;
-                case "G" : Console.WriteLine($"\n Comando:{command.Key.ToString()}"); Get() ; break;
-                case "Q" : return false;
-                default: Console.WriteLine($"\n Comando inválido:{command.Key.ToString()}"); break;
+                case "W": 
+                    Console.WriteLine($"\nMoving Up * * * Comando:{command.Key.ToString()}\n"); 
+                    OnMoveUp(); 
+                    break;
+                case "S" : 
+                    Console.WriteLine($"\nMoving Down * * * Comando:{command.Key.ToString()}\n"); 
+                    OnMoveDown(); 
+                    break;
+                case "D" : 
+                    Console.WriteLine($"\nMoving Right * * * Comando:{command.Key.ToString()}\n"); 
+                    OnMoveRight(); 
+                    break;
+                case "A" : 
+                    Console.WriteLine($"\nMoving Left * * * Comando:{command.Key.ToString()}\n"); 
+                    OnMoveLeft(); 
+                    break;
+                case "G" : 
+                    Console.WriteLine($"\nColecting * * * Comando:{command.Key.ToString()}\n"); 
+                    Get(); 
+                    break;
+                case "Q" :
+                    Console.WriteLine("\n* * * GAME OVER * * *\n");
+                    return false;
+                default: 
+                    Console.WriteLine($"\nComando inválido:{command.Key.ToString()}\n"); 
+                    break;
             }
         } while (!robot.map.IsDone());
         return true;

@@ -7,8 +7,9 @@ namespace ProjetoFinal;
 public class Map
 {
     private ItemMap[,] Matriz;
-    public int h {get; private set;}
-    public int w {get; private set;}
+    public int Height {get; private set;}
+    public int Weight {get; private set;}
+    public int level {get; private set;}
 
     /// <summary>
     /// Classe criada pra geração do mapa inicial 10 x 10
@@ -17,8 +18,8 @@ public class Map
     /// </summary>
     public Map (int w=10, int h=10, int level=1)
     {
-        this.w = w <= 30 ? w : 30;
-        this.h = h <= 30 ? h : 30;
+        this.Weight = w <= 30 ? w : 30;
+        this.Height = h <= 30 ? h : 30;
         Matriz = new ItemMap[w, h];
         for (int i = 0; i < Matriz.GetLength(0); i++) {
             for (int j = 0; j < Matriz.GetLength(1); j++) {
@@ -43,8 +44,8 @@ public class Map
     public void UpdateMap(int w, int h, int level)
     {
     
-        this.w = w <= 30 ? w : 30;
-        this.h = h <= 30 ? h : 30;
+        this.Weight = w <= 30 ? w : 30;
+        this.Height = h <= 30 ? h : 30;
         Matriz = new ItemMap[w, h];
         for (int i = 0; i < Matriz.GetLength(0); i++) {
             for (int j = 0; j < Matriz.GetLength(1); j++) {
@@ -76,7 +77,7 @@ public class Map
     /// </summary>
     public void Update(int x_old, int y_old, int x, int y)
     {
-        if (x < 0 || y < 0 || x> this.w-1 || y> this.h-1)
+        if (x < 0 || y < 0 || x> this.Weight-1 || y> this.Height-1)
         {        
             throw new OutOfMapException();
         }
@@ -157,9 +158,9 @@ public class Map
     private int[,] GenerateCoord(int x, int y)
     {
         int[,] Coords = new int[4, 2]{
-            {x,  y+1 < w-1 ? y+1 : w-1},
+            {x,  y+1 < Weight-1 ? y+1 : Weight-1},
             {x, y-1 > 0 ? y-1 : 0},
-            {x+1 < h-1 ? x+1 : h-1, y},
+            {x+1 < Height-1 ? x+1 : Height-1, y},
             {x-1 > 0 ? x-1 : 0, y}
         };
         return Coords;
@@ -221,40 +222,39 @@ public class Map
         Random r = new Random();
         for(int x = 0; x < 3; x++)
         {
-            int xRandom = r.Next(0, w);
-            int yRandom = r.Next(0, h);
+            int xRandom = r.Next(0, Weight);
+            int yRandom = r.Next(0, Height);
             this.Insert(new JewelBlue(), xRandom, yRandom);
         }
         for(int x = 0; x < 3; x++)
         {
-            int xRandom = r.Next(0, w);
-            int yRandom = r.Next(0, h);
+            int xRandom = r.Next(0, Weight);
+            int yRandom = r.Next(0, Height);
             this.Insert(new JewelGreen(), xRandom, yRandom);
         }
         for(int x = 0; x < 3; x++)
         {
-            int xRandom = r.Next(0, w);
-            int yRandom = r.Next(0, h);
+            int xRandom = r.Next(0, Weight);
+            int yRandom = r.Next(0, Height);
             this.Insert(new JewelRed(), xRandom, yRandom);
         }
         for(int x = 0; x < 10; x++)
         {
-            int xRandom = r.Next(0, w);
-            int yRandom = r.Next(0, h);
+            int xRandom = r.Next(0, Weight);
+            int yRandom = r.Next(0, Height);
             this.Insert(new Water(), xRandom, yRandom);
         }
-        for(int x = 0; x < 10; x++)
+        for(int x = 0; x < 7; x++)
         {
-            int xRandom = r.Next(0, w);
-            int yRandom = r.Next(0, h);
+            int xRandom = r.Next(0, Weight);
+            int yRandom = r.Next(0, Height);
             this.Insert(new Tree(), xRandom, yRandom);
         }
         for(int x = 0; x < 1; x++)
         {
-            int xRandom = r.Next(0, w);
-            int yRandom = r.Next(0, h);
+            int xRandom = r.Next(0, Weight);
+            int yRandom = r.Next(0, Height);
             this.Insert(new Radioactive(), xRandom, yRandom);
         }
     }
-
 }
